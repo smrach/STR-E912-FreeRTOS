@@ -18,7 +18,7 @@ GCC_BIN = $(GCC_BASE)bin/
 GCC_LIB = $(GCC_BASE)arm-none-eabi/lib/
 GCC_INC = $(GCC_BASE)arm-none-eabi/include/
 
-BASE_PATH=D:/str912/FreeRTOS
+BASE_PATH=../
 DEMO_PATH=$(BASE_PATH)/LcdDemo
 
 # Project specific PATH
@@ -63,6 +63,7 @@ CFLAGS= $(DEBUG) \
 		$(OPTIM) \
 		-T$(LDSCRIPT) \
 		-I . \
+		-I $(USER_CODE_DIR)/inc \
 		-I $(LWIP_DIR)/include \
 		-I $(LWIP_DIR)/include/ipv4 \
 		-I $(LWIP_DIR)/include/lwip \
@@ -70,7 +71,6 @@ CFLAGS= $(DEBUG) \
 		-I $(LWIP_DIR)/include/ipv4/lwip \
 		-I $(LWIP_PORT_DIR)/FreeRTOS/STR91x \
 		-I $(ST_LIB_DIR)/inc \
-		-I $(USER_CODE_DIR)/ \
 		-I $(RTOS_SOURCE_DIR)/include \
 		-I $(RTOS_SOURCE_DIR)/portable/GCC/STR9x \
 		-D STR91X_GCC \
@@ -92,12 +92,12 @@ ARM_SOURCE= \
 		printf.c \
 		$(RTOS_SOURCE_DIR)/portable/GCC/STR9x/port.c \
 		$(RTOS_SOURCE_DIR)/portable/GCC/STR9x/portISR.c \
+		$(USER_CODE_DIR)/src/lcd.c \
 		main.c \
 		net_launch_srv.c \
 		./lwipWebServer/httpd.c \
 		./lwipWebServer/fs.c \
 		./lwipNetCalc/NetCalcApp.c \
-		$(USER_CODE_DIR)/lcd.c \
 		$(ST_LIB_DIR)/src/91x_lib.c \
 		$(ST_LIB_DIR)/src/91x_enet.c \
 		$(ST_LIB_DIR)/src/91x_scu.c \
