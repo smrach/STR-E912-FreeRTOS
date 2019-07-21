@@ -16,8 +16,8 @@ My setup is the following:
 - Make for windows
 - Folder on disk with em_armgcc toolchain (maybe from here) https://launchpad.net/gcc-arm-embedded/+download
 - VS Code for visual source code inspect and Notepad++ for fast source code edit.
-- Raspberry Pi model 2011.12 connected to lan ( saved from trash bin and given as gift from a work colleague)
-- Openocd installed on Raspberry Pi and some wires for connect the STR-E912 target board.
+- Raspberry Pi Model B Rev 2(2011.12) running Raspbian 8 (jessie) 4.4.34+ connected to the lan ( saved from trash bin and given as gift from a work colleague)
+- Openocd installed on Raspberry Pi and some wires connected to the JTAG port of STR-E912 target board.
 - Putty SSH on windows for launch Raspberry Openocd daemons.
 - WinSCP on windows for update the compiled binaries on Raspberry folder.
 - Telnet on windows pc to Raspberry Openocd daemon for board flashing/update.
