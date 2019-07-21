@@ -15,10 +15,18 @@ My setup is the following:
 - Pc with Windows 10 LTSB 2016 (with custom blinded privacy options set).
 - Make for windows
 - Folder on disk with em_armgcc toolchain (maybe from here) https://launchpad.net/gcc-arm-embedded/+download
-- VS Code for visual source code inspect e Notepad++ for fast source code edit.
-- Raspberry Pi model 2011.12 connected to lan ( saved from trash and given as gift from a work colleague)
-- Openocd installed on Raspberry Pi and some wires to connected the STR-E912 target board
-- Putty SSH on windows opening openocd
-- WinSCP on windows for put binary on Raspberry folder.
-- Telnet on windows pc to ruspberry for board flashing.
+- VS Code for visual source code inspect and Notepad++ for fast source code edit.
+- Raspberry Pi model 2011.12 connected to lan ( saved from trash bin and given as gift from a work colleague)
+- Openocd installed on Raspberry Pi and some wires for connect the STR-E912 target board.
+- Putty SSH on windows for launch Raspberry Openocd daemons.
+- WinSCP on windows for update the compiled binaries on Raspberry folder.
+- Telnet on windows pc to Raspberry Openocd daemon for board flashing/update.
 
+How to setup and test the build:
+- Grab the sources.
+- Make sure you have Make installed.
+- Make sure you have arm-none-eaby gcc toolchain installed.
+- If you dont have or want have the toolchain on path, simply edit the makefile on LcdDemo folder and set the GCC_BASE variable to the path of your toolchain.
+- Launch 'make' from LcdDemo folder and if all go right you should have the RTOSDemo.bin file ready to be flashed on board.
+
+That's all!
